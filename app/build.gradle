@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "ru.datum_group.marvelheroes"
+        minSdkVersion 17
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "API_URL", '"https://www.developer.marvel.com/"'
+        buildConfigField "String", "API_KEY", '"0c1fdbe06923bbf64556f4394d4952ed"'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+ext{
+    support = '28.0.0'
+    constrait = '1.1.3'
+    moxy = '1.5.5'
+    recyclerview = '28.0.0'
+    cardview = '28.0.0'
+    glide = '4.7.1'
+    junit = '4.12'
+    runner = '1.0.2'
+    espresso = '3.0.2'
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:appcompat-v7:$support"
+    implementation "com.android.support.constraint:constraint-layout:$constrait"
+    implementation "com.android.support:design:$support"
+    implementation "com.arello-mobile:moxy:$moxy"
+    implementation "com.arello-mobile:moxy-app-compat:$moxy"
+    annotationProcessor "com.arello-mobile:moxy-compiler:$moxy"
+    implementation "com.android.support:recyclerview-v7:$recyclerview"
+    implementation "com.android.support:cardview-v7:$cardview"
+    implementation "com.github.bumptech.glide:glide:$glide"
+    testImplementation "junit:junit:$junit"
+    androidTestImplementation "com.android.support.test:runner:$runner"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$espresso"
+
+}
