@@ -1,12 +1,13 @@
 package ru.datum_group.marvelheroes.presenter;
 
+import android.view.View;
+
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
 
 import java.util.List;
 
 import ru.datum_group.marvelheroes.entity.Heroes;
-import ru.datum_group.marvelheroes.interfaces.ApiModule;
 import ru.datum_group.marvelheroes.interfaces.MainView;
 
 /**
@@ -14,19 +15,15 @@ import ru.datum_group.marvelheroes.interfaces.MainView;
  */
 @InjectViewState
 public class MainPresenter
-        extends MvpPresenter<MainView>
-            implements ApiModule.Presenter {
+        extends MvpPresenter<MainView> {
 
 
 
 
-    public MainPresenter(){
-        getViewState().showCards();
+    public  void MainPresenter(String listHeroes){
+        getViewState().showCards(listHeroes);
     }
 
 
-    @Override
-    public void start() {
 
-    }
 }

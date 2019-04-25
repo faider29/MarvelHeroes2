@@ -1,5 +1,6 @@
 package ru.datum_group.marvelheroes.adapter;
 
+import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -78,9 +79,8 @@ public class MainAdapter
         }
     }
 
-    public void addList(){
-    mHeroesList.add(Heroes);
-
+    public void addList(List<Heroes> heroes){
+    mHeroesList.addAll(heroes);
     }
 
 
